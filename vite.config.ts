@@ -1,12 +1,14 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 export default defineConfig({
   // GitHub Pages 배포 시 리포지토리 이름을 base로 설정해야 합니다.
   // './'를 사용하면 상대 경로로 설정되어 대부분의 환경에서 호환됩니다.
   //base: "/art/",
   base: "/",
-  plugins: [react()],
+  plugins: [react(), cloudflare()],
   build: {
     outDir: "dist",
   },
